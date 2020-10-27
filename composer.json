@@ -1,0 +1,31 @@
+{
+    "name": "onetoweb/exact",
+    "description": "Onetoweb Exact App - Client",
+    "keywords": [
+        "php",
+        "onetoweb",
+        "exact",
+        "app"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/onetoweb/exact",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan van 't Ende",
+            "email": "jvantende@onetoweb.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "symfony/error-handler": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Onetoweb\\Exact\\": "src/"
+        }
+    }
+}
