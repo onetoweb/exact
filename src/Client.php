@@ -170,4 +170,25 @@ class Client
     {
         return $this->get("order/$orderNumber");
     }
+    
+    /**
+     * @param int $page = 1
+     * @return array
+     */
+    public function getInvoices(int $page = 1): ?array
+    {
+        return $this->get('invoice', [
+            'page' => $page
+        ]);
+    }
+    
+    /**
+     * @param int $invoiceNumber
+     * 
+     * @return array
+     */
+    public function getInvoice(int $invoiceNumber): ?array
+    {
+        return $this->get("invoice/$invoiceNumber");
+    }
 }

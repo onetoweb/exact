@@ -2,8 +2,6 @@
 
 require 'vendor/autoload.php';
 
-Symfony\Component\ErrorHandler\Debug::enable();
-
 use Onetoweb\Exact\Client;
 use Onetoweb\Exact\Exception\RequestException;
 
@@ -61,8 +59,19 @@ try {
     $results = $client->getOrder($orderNumber);
     $order = $results['order'];
     
+    // get invoices
+    $page = 1;
+    $results = $client->getInvoices($page);
+    $invoices = $results['invoices'];
+    
+    // get invoice
+    $invoiceNumber = 42;
+    $results = $client->getInvoice($invoiceNumber);
+    $invoice = $results['invoice'];
+    
 } catch (RequestException $requestException) {
     
     // contains json with error messages
     $errors = json_decode($requestException->getMessage());
+    
 }
