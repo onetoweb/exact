@@ -65,7 +65,7 @@ class Client
     }
     
     /**
-     * @param string $method = 'GET'
+     * @param string $method
      * @param string $endpoint
      * @param array $data = []
      * @param array $query = []
@@ -74,7 +74,7 @@ class Client
      * 
      * @return array
      */
-    public function request(string $method = 'GET', string $endpoint, array $data = [], array $query = []): ?array
+    public function request(string $method, string $endpoint, array $data = [], array $query = []): ?array
     {
         $client = new GuzzleClient([
             'base_uri' => self::BASE_URI
